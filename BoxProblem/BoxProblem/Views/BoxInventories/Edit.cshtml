@@ -7,7 +7,7 @@
 <form action="Show" method="get">
     <div class="row">
         <div class="offset-2">
-            <label>Weight: </label><input placeholder="@Html.DisplayFor(model => model.Weight)" />
+            <label>Weight: </label><input placeholder="@Html.EditorFor(model => model.Weight)" />
         </div>
     </div>
     <div class="row">
@@ -17,8 +17,8 @@
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Liquid(Yes or No): </label><input type="radio"@Html.DisplayFor(model => model.CanHoldLiquid)
-                                                     /*@{ if (Model.CanHoldLiquid) { checked { } } else { unchecked { } } } />*/
+            <label>Liquid(Yes or No): </label><input type="radio"  @{ if (Model.CanHoldLiquid) { checked { } } else { unchecked { } } } />
+            
         </div>
     </div>
     <div class="row">
