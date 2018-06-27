@@ -17,7 +17,18 @@
 </div>
 <div class="row">
     <div class="offset-2">
-        <label>Liquid(Yes or No): </label><input placeholder="@Html.DisplayFor(model => model.CanHoldLiquid)" />
+        <label>Liquid(Yes or No): </label><input type = "radio"
+        @{
+            if (Model.CanHoldLiquid)
+            {
+                checked { }
+            }
+            else
+            {
+                unchecked { }
+            }
+        }
+            " />
     </div>
 </div>
 <div class="row">
