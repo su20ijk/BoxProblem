@@ -1,4 +1,4 @@
-﻿
+﻿@model BoxProblem.Data.BoxInventory
 @{
     ViewData["Title"] = "Edit";
 }
@@ -7,32 +7,32 @@
 
 <div class="row">
     <div class="offset-2">
-        <p>Weight: </p><input placeholder="current" />
+        <label>Weight: </label><input placeholder="@Html.DisplayFor(model => model.Weight)"/>
     </div>
 </div>
 <div class="row">
     <div class="offset-2">
-        <p>Volume: </p><input placeholder="current"/>
+        <label>Volume: </label><input placeholder="@Html.DisplayFor(model => model.Volume)"/>
     </div>
 </div>
 <div class="row">
     <div class="offset-2">
-        <p>Liquid(Yes or No): </p><input placeholder="current" />
+        <label>Liquid(Yes or No): </label><input placeholder="@Html.DisplayFor(model => model.CanHoldLiquid)" />
     </div>
 </div>
 <div class="row">
     <div class="offset-2">
-        <p>Cost: </p><input placeholder="current"/>
+        <label>Cost: </label><input placeholder="@Html.DisplayFor(model => model.Cost)"/>
     </div>
 </div>
 <div class="row">
     <div class="offset-2">
-        <p>Amount in Inventory: </p><input placeholder="current"/>
+        <label>Amount in Inventory: </label><input placeholder="@Html.DisplayFor(model => model.InventoryCount)"/>
     </div>
 </div>
 <div class="row">
     <div class="offset-6">
-        <button>Save</button>
-        <button>Back</button>
+        <input type="button">Save</>
+        <input type="button">Back</>
     </div>
 </div>
