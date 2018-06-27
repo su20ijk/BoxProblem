@@ -71,7 +71,7 @@ namespace BoxProblem.Controllers
         }
 
     
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
