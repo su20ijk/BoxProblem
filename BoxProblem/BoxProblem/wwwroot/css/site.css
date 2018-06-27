@@ -33,7 +33,6 @@
         display: none;
     }
 }
-
 .darkGrey{
     color: #5D5C61;
 }
@@ -54,4 +53,28 @@
 }
 .black{
     color: #000000;
+}
+.buttonB:hover {
+    background-color: #557A95;
+    color: white;
+    width: 120px;
+    height: 40px;
+    outline: none;
+    transition: .1s ease-in-out;
+}
+
+.buttonB {
+    transition: .1s ease-in-out;
+    border-radius: 4px;
+    font-family: Georgia;
+    font-size: 16px;
+    border: 1px solid #557A95;
+    background-color: white;
+    width: 120px;
+    height: 40px;
+    outline: none;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer !important;
 }

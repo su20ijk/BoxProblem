@@ -21,10 +21,11 @@ namespace BoxProblem.Controllers
         {
             return View(service.GetAll());
         }
-        public ActionResult Detail(int id)
+
+        public ActionResult Details(int id)
         {
-            BoxInventory box = service.GetById(id);
-            return View(box);
+            BoxInventory boxDetail = service.GetById(id);
+            return View(boxDetail);
         }
 
         public ActionResult Create()
@@ -67,7 +68,7 @@ namespace BoxProblem.Controllers
     
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmation(int id)
         {
             BoxInventory box = service.GetById(id);
             service.DeleteBox(box);
