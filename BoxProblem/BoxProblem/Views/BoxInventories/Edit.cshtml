@@ -7,7 +7,7 @@
 <form action="Show" method="get">
     <div class="row">
         <div class="offset-2">
-            <label>Weight: </label><input placeholder="@Html.EditorFor(model => model.Weight)" />
+            <label>Weight: </label><input placeholder="@Html.DisplayFor(model => model.Weight)" />
         </div>
     </div>
     <div class="row">
@@ -17,8 +17,8 @@
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Liquid(Yes or No): </label><input type="radio"  @{ if (Model.CanHoldLiquid) { checked { } } else { unchecked { } } } />
-            
+            <label>Liquid(Yes or No): </label><input type="radio"@Html.DisplayFor(model => model.CanHoldLiquid)
+                                                     /*@{ if (Model.CanHoldLiquid) { checked { } } else { unchecked { } } } />*/
         </div>
     </div>
     <div class="row">
@@ -38,3 +38,37 @@
         </div>
     </div>
 </form>
+@Html.ActionLink("Back", "Detail", new { id = @Model.Id })
+<form action="Show" method="get">
+    <div class="row">
+        <div class="offset-2">
+            <label>Weight: </label><input placeholder="@Html.EditorFor(model => model.Weight)" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label>Volume: </label><input placeholder="@Html.DisplayFor(model => model.Volume)" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label>Liquid(Yes or No): </label><input type="radio"  @{ if (Model.CanHoldLiquid) { checked { } } else { unchecked { } } } />
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label>Cost: </label><input placeholder="@Html.DisplayFor(model => model.Cost)" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label>Amount in Inventory: </label><input placeholder="@Html.DisplayFor(model => model.InventoryCount)" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-6">
+            <input type="submit" name="Save">
+            <input type="button" name="Back">
+        </div>
+    </div>

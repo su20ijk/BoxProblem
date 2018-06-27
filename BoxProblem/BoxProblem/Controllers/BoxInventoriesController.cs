@@ -50,13 +50,8 @@ namespace BoxProblem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(BoxInventory box)
         {
-            if (ModelState.IsValid)
-            {
                 service.EditBox(box);
                 return RedirectToAction("Detail");
-            }
-
-            return View(box);
         }
 
         public ActionResult Delete(int id)
