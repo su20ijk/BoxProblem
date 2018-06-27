@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BoxProblem.Data;
+using BoxProblem.Server;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BoxProblem.Controllers
@@ -18,12 +19,12 @@ namespace BoxProblem.Controllers
 
         public IActionResult Index()
         {
-            return View(service.GetAllBoxes());
+            return View(service.GetAll());
         }
 
         public ActionResult Detail(int id)
         {
-            BoxInventory box = service.GetBoxById(id);
+            BoxInventory box = service.GetById(id);
             return View(box);
         }
 
@@ -38,7 +39,7 @@ namespace BoxProblem.Controllers
         {
             if (ModelState.IsValid)
             {
-                service.AddBoxInventory(box);
+                service.AddBox(box);
                 return RedirectToAction("Index");
             }
 
@@ -47,7 +48,7 @@ namespace BoxProblem.Controllers
 
         public ActionResult Edit(int id)
         {
-            BoxInventory box = service.GetBoxById(id);
+            BoxInventory box = service.GetById(id);
             return View(box);
         }
 
@@ -57,7 +58,7 @@ namespace BoxProblem.Controllers
         {
             if (ModelState.IsValid)
             {
-                service.SaveEdits(box);
+                service.EditBox(box);
                 return RedirectToAction("Detail");
             }
 
@@ -66,7 +67,7 @@ namespace BoxProblem.Controllers
 
         public ActionResult Delete(int id)
         {
-            BoxInventory box = service.GetBoxById(id);
+            BoxInventory box = service.GetById(id);
             return View(box);
         }
 
@@ -75,7 +76,7 @@ namespace BoxProblem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BoxInventory box = service.GetBoxById(id);
+            BoxInventory box = service.GetById(id);
             service.DeleteBox(box);
             return RedirectToAction("Index");
         }

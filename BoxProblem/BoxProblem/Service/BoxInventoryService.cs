@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace BoxProblem.Server
 {
-    public class BoxInventoryServer
+    public class BoxInventoryService
     {
         private BoxInventoryRepository repository;
-        public BoxInventoryServer(ApplicationDbContext dbContext)
+        public BoxInventoryService(ApplicationDbContext dbContext)
         {
             repository = new BoxInventoryRepository(dbContext);
         }
