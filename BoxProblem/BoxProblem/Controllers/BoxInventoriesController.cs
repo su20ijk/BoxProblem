@@ -21,7 +21,6 @@ namespace BoxProblem.Controllers
         {
             return View(service.GetAll());
         }
-
         public ActionResult Detail(int id)
         {
             BoxInventory box = service.GetById(id);
@@ -34,16 +33,10 @@ namespace BoxProblem.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(BoxInventory box)
         {
-            if (ModelState.IsValid)
-            {
                 service.AddBox(box);
-                return RedirectToAction("Index");
-            }
-
-            return View(box);
+                return RedirectToAction("Index", service.GetAll());
         }
 
         public ActionResult Edit(int id)
