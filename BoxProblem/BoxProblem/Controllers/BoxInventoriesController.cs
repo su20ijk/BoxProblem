@@ -21,7 +21,7 @@ namespace BoxProblem.Controllers
         {
             return View(service.GetAll());
         }
-        public ActionResult Detail(int id)
+        public ActionResult Details(int id)
         {
             BoxInventory box = service.GetById(id);
             return View(box);
