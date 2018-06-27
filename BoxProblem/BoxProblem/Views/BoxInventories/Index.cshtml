@@ -1,9 +1,15 @@
 ﻿@using BoxProblem.Data;
-@model List<BoxInventory> 
+@model List<BoxInventory>
 @{
     ViewData["Title"] = "Index";
 }
-    @Html.ActionLink("Create", "Create", "BoxInventories")
+@Html.ActionLink("Create", "Create", "BoxInventories")
+
+<form action="Index" method="post">
+    <label>Search for boxes larger than: </label><input name="volLimit" type="number" />
+    <input type="submit" value="Search"/>
+</form>
+
 <table class="table">
     <tr>
         <th><span>Volume</span></th>

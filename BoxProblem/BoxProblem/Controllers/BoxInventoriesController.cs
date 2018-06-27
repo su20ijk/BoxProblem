@@ -59,13 +59,20 @@ namespace BoxProblem.Controllers
             BoxInventory box = service.GetById(id);
             return View(box);
         }
-
-        [HttpPost]
-        public ActionResult DeleteConfirmation(int id)
+    
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
             BoxInventory box = service.GetById(id);
             service.DeleteBox(box);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Index(int volLimit)
+        {
+            return View(service.GetVolumeLargerThan(volLimit));
         }
     }
 }

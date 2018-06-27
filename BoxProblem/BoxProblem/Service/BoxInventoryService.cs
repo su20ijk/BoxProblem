@@ -34,5 +34,9 @@ namespace BoxProblem.Server
         {
             repository.DeleteBox(toDelete);
         }
+        public List<BoxInventory> GetVolumeLargerThan(int vol)
+        {
+            return repository.GetVolumeLargerThan(vol);
+        }
     }
 }
