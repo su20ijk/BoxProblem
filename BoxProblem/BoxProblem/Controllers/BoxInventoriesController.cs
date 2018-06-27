@@ -64,7 +64,6 @@ namespace BoxProblem.Controllers
             BoxInventory box = service.GetById(id);
             return View(box);
         }
-
     
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -73,6 +72,12 @@ namespace BoxProblem.Controllers
             BoxInventory box = service.GetById(id);
             service.DeleteBox(box);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Search(int vol)
+        {
+            return View(service.GetVolumeLargerThan(vol));
         }
     }
 }

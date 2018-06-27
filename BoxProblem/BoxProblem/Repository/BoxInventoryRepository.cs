@@ -9,6 +9,7 @@ namespace BoxProblem.Repository
     public class BoxInventoryRepository
     {
         private ApplicationDbContext context;
+
         public BoxInventoryRepository(ApplicationDbContext dbContext)
         {
             context = dbContext;
@@ -35,6 +36,11 @@ namespace BoxProblem.Repository
         {
             context.Boxes.Remove(toDelete);
             context.SaveChanges();
+        }
+        public List<BoxInventory> GetVolumeLargerThan(int vol)
+        {
+            var results = context.Boxes.Where(b => b.Volume > vol);
+            return results.ToList();
         }
     }
 }
