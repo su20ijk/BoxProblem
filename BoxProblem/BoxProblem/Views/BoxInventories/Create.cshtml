@@ -1,38 +1,39 @@
-﻿
+﻿@model  BoxProblem.Data.BoxInventory
 @{
     ViewData["Title"] = "Create";
 }
 
 <h2>Create</h2>
-
-<div class="row">
-    <div class="offset-2">
-        <p>Weight: </p><input />
+<form action="index" method="post">
+    <div class="row">
+        <div class="offset-2">
+            <label>Weight: </label><input name="Weight" />
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Volume: </p><input/>
+    <div class="row">
+        <div class="offset-2">
+            <label>Volume: </label><input name="Volume"/>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Liquid(Yes or No): </p><input />
+    <div class="row">
+        <div class="offset-2">
+            <label>Liquid(Yes or No): </label><input name="CanHoldLiquid"/>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Cost: </p><input />
+    <div class="row">
+        <div class="offset-2">
+            <label>Cost: </label><input name="Cost"/>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Amount in Inventory: </p><input />
+    <div class="row">
+        <div class="offset-2">
+            <label>Amount in Inventory: </label><input name="InventoryCount"/>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="offset-6">
-        <button>Create</button>
-        <button>Back</button>
+    <div class="row">
+        <div class="offset-6">
+            <input type="submit">
+            <input>Back
+        </div>
     </div>
-</div>
+</form>
