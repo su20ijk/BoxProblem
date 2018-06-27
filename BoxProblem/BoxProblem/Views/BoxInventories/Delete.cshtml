@@ -1,4 +1,4 @@
-﻿
+﻿@model BoxProblem.Data.BoxInventory
 @{
     ViewData["Title"] = "Delete";
 }
@@ -6,9 +6,53 @@
 <h2>Delete</h2>
 
 <div class="row">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Volume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CanHoldLiquid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanHoldLiquid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryCount)
+        </dd>
+    </dl>
+</div>
+<div>
     <p>Are you sure you want to delete?</p>
+    <div class="row">
+        <input type="submit" value="Delete" />
+        @Html.ActionLink("Back to List", "Index")
+        <input type="submit" value="Cancel" />
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 </div>
-<div class="row">
-    <button>Yes</button>
-    <button>No</button>
-</div>
+
