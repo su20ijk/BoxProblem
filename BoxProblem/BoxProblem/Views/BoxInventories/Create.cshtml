@@ -4,36 +4,35 @@
 }
 
 <h2>Create</h2>
-<form action="index" method="post">
+<form action="Create" method="post">
     <div class="row">
         <div class="offset-2">
-            <label>Weight: </label><input name="Weight" />
+            <label>Weight: </label><input name="Weight" type="number"/>
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Volume: </label><input name="Volume"/>
+            <label>Volume: </label><input name="Volume" type="number"/>
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Liquid(Yes or No): </label><input name="CanHoldLiquid"/>
+            <label>Liquid(Yes or No): </label><input name="CanHoldLiquid" type="checkbox" />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Cost: </label><input name="Cost"/>
+            <label>Cost: </label><input name="Cost" type="number" step="any" />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Amount in Inventory: </label><input name="InventoryCount"/>
+            <label>Amount in Inventory: </label><input name="InventoryCount" type="number"/>
         </div>
     </div>
     <div class="row">
         <div class="offset-6">
-            <input type="submit">
-            <input>Back
+            <input type="submit" value="this is the button">
         </div>
     </div>
 </form>
