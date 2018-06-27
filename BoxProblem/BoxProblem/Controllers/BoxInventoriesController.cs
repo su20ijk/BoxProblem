@@ -47,11 +47,11 @@ namespace BoxProblem.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(BoxInventory box)
+        public ActionResult Edit(BoxInventory box, int IdTP)
         {
+                box.Id = IdTP;
                 service.EditBox(box);
-                return RedirectToAction("Detail");
+                return RedirectToAction("Details", box);
         }
 
         public ActionResult Delete(int id)
@@ -60,9 +60,7 @@ namespace BoxProblem.Controllers
             return View(box);
         }
 
-    
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmation(int id)
         {
             BoxInventory box = service.GetById(id);

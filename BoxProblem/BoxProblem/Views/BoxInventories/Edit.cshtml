@@ -1,74 +1,41 @@
-﻿@model BoxProblem.Data.BoxInventory
+﻿@using BoxProblem.Data;
+@model BoxInventory
 @{
     ViewData["Title"] = "Edit";
 }
 
 <h2>Edit</h2>
-<form action="Show" method="get">
+<form action="Edit" method="post">
+    <input name="IdTP" value="@Model.Id" hidden="hidden" />
     <div class="row">
         <div class="offset-2">
-            <label>Weight: </label><input placeholder="@Html.DisplayFor(model => model.Weight)" />
+            <label>Weight: </label><input name="Weight" type="number" value=@Model.Weight />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Volume: </label><input placeholder="@Html.DisplayFor(model => model.Volume)" />
+            <label>Volume: </label><input name="Volume" type="number" value=@Model.Volume />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Liquid(Yes or No): </label><input type="radio"@Html.DisplayFor(model => model.CanHoldLiquid)
-                                                     /*@{ if (Model.CanHoldLiquid) { checked { } } else { unchecked { } } } />*/
+            <label>Liquid: </label><input name="CanHoldLiquid" type="checkbox" value=@Model.CanHoldLiquid/>
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Cost: </label><input placeholder="@Html.DisplayFor(model => model.Cost)" />
+            <label>Cost: </label><input name="Cost" type="number" step="any" value="@Model.Cost" />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Amount in Inventory: </label><input placeholder="@Html.DisplayFor(model => model.InventoryCount)" />
+            <label>Amount in Inventory: </label><input name="InventoryCount" type="number" value="@Model.InventoryCount" />
         </div>
     </div>
     <div class="row">
         <div class="offset-6">
-            <input type="submit" name="Save">
-            <input type="button" name="Back">
+            <input type="submit" name="submit">
         </div>
     </div>
 </form>
 @Html.ActionLink("Back", "Detail", new { id = @Model.Id })
-<form action="Show" method="get">
-    <div class="row">
-        <div class="offset-2">
-            <label>Weight: </label><input placeholder="@Html.EditorFor(model => model.Weight)" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="offset-2">
-            <label>Volume: </label><input placeholder="@Html.DisplayFor(model => model.Volume)" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="offset-2">
-            <label>Liquid(Yes or No): </label><input type="radio"  @{ if (Model.CanHoldLiquid) { checked { } } else { unchecked { } } } />
-            
-        </div>
-    </div>
-    <div class="row">
-        <div class="offset-2">
-            <label>Cost: </label><input placeholder="@Html.DisplayFor(model => model.Cost)" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="offset-2">
-            <label>Amount in Inventory: </label><input placeholder="@Html.DisplayFor(model => model.InventoryCount)" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="offset-6">
-            <input type="submit" name="Save">
-            <input type="button" name="Back">
-        </div>
-    </div>

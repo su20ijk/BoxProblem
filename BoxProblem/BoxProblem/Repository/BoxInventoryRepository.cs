@@ -1,4 +1,5 @@
 ﻿using BoxProblem.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace BoxProblem.Repository
         }
         public void EditBox(BoxInventory toEdit)
         {
-            context.Entry(toEdit).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            context.Entry(toEdit).State = EntityState.Modified;
             context.SaveChanges();
         }
         public void DeleteBox(BoxInventory toDelete)
