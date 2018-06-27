@@ -33,3 +33,25 @@
         display: none;
     }
 }
+
+.darkGrey{
+    color: #5D5C61;
+}
+.lightGrey{
+    color: #379683;
+}
+.lightBlue{
+    color: #7395AE;
+}
+.darkBlue{
+    color: #557A95;
+}
+.tan{
+    color: #B1A296;
+}
+.white{
+    color: #ffffff;
+}
+.black{
+    color: #000000;
+}

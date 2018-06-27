@@ -1,43 +1,22 @@
-﻿
+﻿@using BoxProblem.Data;
+@model List<BoxInventory> 
 @{
     ViewData["Title"] = "Index";
 }
-
-<h2>Index</h2>
-
-<br />
-<br />
-<div class="row offset-2">
-    <div class="col-4">
-        <input placeholder="Search"/>
-        <p>drowpdown here!</p>
-    </div>
-    <div class="col-4">
-        <button>Create</button>
-    </div>
-</div>
 <table class="table">
     <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Volume
-        </th>
-        <th>
-            Amount in Inventory
-        </th>
+        <th><span>Volume</span></th>
+        <th><span>Quantity</span></th>
+        <th><br /></th>
     </tr>
-    <tr>
-        <td>
-            ***name***
-        </td>
-        <td>
-            ***volume***
-        </td>
-        <td>
-            ***amount****
-        </td>
-    </tr>
-    
+    @foreach (BoxInventory box in Model)
+    {
+        <tr class="tableRow" onclick="location.href='@Url.Action("Details","Box",new { id = box.Id })'">
+            <td class="bodyText">@box.Volume</td>
+            <td class="bodyText">@box.InventoryCount</td>
+            <td>
+                <a href="@Url.Action("Delete","Box",new { id = box.Id })" >Delete</a>
+            </td>
+        </tr>
+    }
 </table>
