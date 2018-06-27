@@ -4,37 +4,64 @@
 }
 
 <h2>Edit</h2>
-<form action="Show" method="get">
-    <div class="row">
-        <div class="offset-2">
-            <label>Weight: </label><input placeholder="@Html.EditorFor(model => model.Weight)" />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Box</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Volume, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Volume, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Volume, "", new { @class = "text-danger" })
         </div>
     </div>
-    <div class="row">
-        <div class="offset-2">
-            <label>Volume: </label><input placeholder="@Html.DisplayFor(model => model.Volume)" />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
         </div>
     </div>
-    <div class="row">
-        <div class="offset-2">
-            <label>Liquid(Yes or No): </label><input type="radio"  @{ if (Model.CanHoldLiquid) { checked { } } else { unchecked { } } } />
-            
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
         </div>
     </div>
-    <div class="row">
-        <div class="offset-2">
-            <label>Cost: </label><input placeholder="@Html.DisplayFor(model => model.Cost)" />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CanHoldLiquid, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CanHoldLiquid, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CanHoldLiquid, "", new { @class = "text-danger" })
         </div>
     </div>
-    <div class="row">
-        <div class="offset-2">
-            <label>Amount in Inventory: </label><input placeholder="@Html.DisplayFor(model => model.InventoryCount)" />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.InventoryCount, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.InventoryCount, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.InventoryCount, "", new { @class = "text-danger" })
         </div>
     </div>
-    <div class="row">
-        <div class="offset-6">
-            <input type="submit" name="Save">
-            <input type="button" name="Back">
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
         </div>
     </div>
-</form>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
