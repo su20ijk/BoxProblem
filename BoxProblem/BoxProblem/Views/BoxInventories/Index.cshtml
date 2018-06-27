@@ -11,11 +11,11 @@
     </tr>
     @foreach (BoxInventory box in Model)
     {
-        <tr class="tableRow" onclick="location.href='@Url.Action("Details","Box",new { id = box.Id })'">
+        <tr class="tableRow" onclick="location.href='@Url.Action("Details","BoxInventories",new { id = box.Id })'">
             <td class="bodyText">@box.Volume</td>
             <td class="bodyText">@box.InventoryCount</td>
             <td>
-                <a href="@Url.Action("Delete","Box",new { id = box.Id })" >Delete</a>
+                <a href="@Url.Action("Delete","BoxInventories",new { id = box.Id })" >Delete</a>
             </td>
         </tr>
     }

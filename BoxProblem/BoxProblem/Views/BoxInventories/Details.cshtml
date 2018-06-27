@@ -1,4 +1,5 @@
-﻿
+﻿@using BoxProblem.Data;
+@model BoxInventory
 @{
     ViewData["Title"] = "Details";
 }
@@ -7,27 +8,27 @@
 
 <div class="row">
     <div class="offset-2">
-        <p>Weight: </p> <p>value</p>
+        <p>Weight: @Model.Weight</p>
     </div>
 </div>
 <div class="row">
     <div class="offset-2">
-        <p>Volume: </p> <p>value</p>
+        <p>Volume: @Model.Volume</p>
     </div>
 </div>
 <div class="row">
     <div class="offset-2">
-        <p>Liquid(Yes or No): </p><p> value</p>
+        <p>Liquid(Yes or No): @Model.CanHoldLiquid</p>
     </div>
 </div>
 <div class="row">
     <div class="offset-2">
-        <p>Cost: </p> <p>value</p>
+        <p>Cost: @Model.Cost</p>
     </div>
 </div>
 <div class="row">
     <div class="offset-2">
-        <p>Amount in Inventory: </p><p>value</p>
+        <p>Amount in Inventory: @Model.InventoryCount</p>
     </div>
 </div>
 <div class="row">
