@@ -21,10 +21,11 @@ namespace BoxProblem.Controllers
         {
             return View(service.GetAll());
         }
+
         public ActionResult Details(int id)
         {
-            BoxInventory box = service.GetById(id);
-            return View(box);
+            BoxInventory boxDetail = service.GetById(id);
+            return View(boxDetail);
         }
 
         public ActionResult Create()
