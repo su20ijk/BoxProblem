@@ -1,4 +1,4 @@
-﻿
+﻿@model BoxProblem.Data.BoxInventory
 @{
     ViewData["Title"] = "Details";
 }
@@ -6,33 +6,50 @@
 <h2>Details</h2>
 
 <div class="row">
-    <div class="offset-2">
-        <p>Weight: </p> <p>value</p>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Volume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CanHoldLiquid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanHoldLiquid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryCount)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="row">
+        <input type="submit" value="Edit" />
+        @Html.ActionLink("Cancel", "Index")
     </div>
 </div>
-<div class="row">
-    <div class="offset-2">
-        <p>Volume: </p> <p>value</p>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Liquid(Yes or No): </p><p> value</p>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Cost: </p> <p>value</p>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Amount in Inventory: </p><p>value</p>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-6">
-        <button>Edit</button>
-        <button>Back</button>
-    </div>
-</div>
+

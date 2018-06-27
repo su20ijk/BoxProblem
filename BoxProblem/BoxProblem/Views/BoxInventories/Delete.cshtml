@@ -3,7 +3,7 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Delete Confirmation</h2>
 
 <div class="row">
     <hr />
@@ -50,9 +50,7 @@
     <p>Are you sure you want to delete?</p>
     <div class="row">
         <input type="submit" value="Delete" />
-        @Html.ActionLink("Back to List", "Index")
-        <input type="submit" value="Cancel" />
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Cancel", "Index")
     </div>
 </div>
 
