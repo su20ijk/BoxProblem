@@ -5,17 +5,10 @@
 }
 @Html.ActionLink("Create", "Create", "BoxInventories")
 
-<div>
-    <label>Search for boxes larger than: </label><input name="Weight" type="number" />
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Search" class="btn btn-default" /> 
-        </div>
-    }
-</div>
+<form action="Index" method="post">
+    <label>Search for boxes larger than: </label><input name="volLimit" type="number" />
+    <input type="submit" value="Search"/>
+</form>
 
 <table class="table">
     <tr>

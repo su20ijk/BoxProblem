@@ -75,9 +75,9 @@ namespace BoxProblem.Controllers
         }
 
         [HttpPost]
-        public ActionResult Search(int vol)
+        public ActionResult Index(int volLimit)
         {
-            return View(service.GetVolumeLargerThan(vol));
+            return View(service.GetVolumeLargerThan(volLimit));
         }
     }
 }
