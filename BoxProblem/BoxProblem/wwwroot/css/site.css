@@ -78,3 +78,16 @@
     line-height: 30px;
     cursor: pointer !important;
 }
+
+.header{
+    font-family: Georgia;
+    font-size: 50px;
+}
+
+.input {
+    font-family: 'Georgia', sans-serif;
+    font-size: 16px;
+    width: 160px;
+    height: 32px;
+    text-align: center;
+}
