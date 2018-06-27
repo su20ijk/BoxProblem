@@ -66,9 +66,9 @@ namespace BoxProblem.Controllers
         }
 
     
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmation(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
             BoxInventory box = service.GetById(id);
             service.DeleteBox(box);
