@@ -63,14 +63,14 @@ namespace BoxProblem.Controllers
 
             return View(box);
         }
-        // GET: Students/Delete/5
+
         public ActionResult Delete(int id)
         {
             BoxInventory box = service.GetBoxById(id);
             return View(box);
         }
 
-        // POST: Students/Delete/5
+    
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
