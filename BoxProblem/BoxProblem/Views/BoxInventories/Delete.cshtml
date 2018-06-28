@@ -52,14 +52,17 @@
     <div class="row" align="center">
         <label class="label">ARE YOU SURE YOU WANT TO DELETE?</label>
         <div class="container topspace3">
+        </div>      
+        <div class="row" align="center">
+            <div class="offset-6">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <input class="buttonB" type="submit" value="Delete" />
+                }
+                <a class="buttonB" href="@Url.Action("Index","BoxInventories")">Cancel</a>
+            </div>
         </div>
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-            <div> <input type="submit" value="Delete" class="buttonB" /> </div>
-            <a class="buttonB" href="@Url.Action("Index","BoxInventories")">Cancel</a>
-        }
     </div>
 </div>
 
