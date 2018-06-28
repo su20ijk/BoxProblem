@@ -51,8 +51,8 @@
 
     <div class="row">
         <div class="offset-6">
-            <button class="buttonB">@Html.ActionLink("Edit", "Edit", new { id = @Model.Id })</button>
-            <button class="buttonB">@Html.ActionLink("Cancel", "Index")</button>
+            <a class="buttonB" href="@Url.Action("Edit","BoxInventories",new { id = @Model.Id })">Edit</a>
+            <a class="buttonB" href="@Url.Action("Index","BoxInventories")">Back to List</a>
         </div>
     </div>
 </div>

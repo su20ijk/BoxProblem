@@ -42,8 +42,7 @@
     <div class="row">
         <div class="offset-6">
             <input class="buttonB" type="submit" name="submit">
+            <a class="buttonB" href="@Url.Action("Details","BoxInventories", new { id = @Model.Id })">Cancel</a>
         </div>
     </div>
 </form>
-
-@Html.ActionLink("Back", "Details", new { id = @Model.Id })
