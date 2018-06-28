@@ -12,7 +12,7 @@ namespace BoxProblem.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "BoxInventories");
         }
 
         public IActionResult About()

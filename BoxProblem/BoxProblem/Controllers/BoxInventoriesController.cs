@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BoxProblem.Data;
 using BoxProblem.Server;
 using Microsoft.AspNetCore.Mvc;
+using BoxProblem.ViewModel;
 
 namespace BoxProblem.Controllers
 {
@@ -17,8 +18,9 @@ namespace BoxProblem.Controllers
             service = new BoxInventoryService(context);
         }
 
-        public IActionResult Index()
+        public ActionResult Index()
         {
+           
             return View(service.GetAll());
         }
 
@@ -36,8 +38,9 @@ namespace BoxProblem.Controllers
         [HttpPost]
         public ActionResult Create(BoxInventory box)
         {
+            box.CreatedAt = DateTime.Now;
                 service.AddBox(box);
-                return RedirectToAction("Index", service.GetAll());
+                return View("Index", service.GetAll());
         }
 
         public ActionResult Edit(int id)
@@ -51,7 +54,7 @@ namespace BoxProblem.Controllers
         {
                 box.Id = IdTP;
                 service.EditBox(box);
-                return RedirectToAction("Details", box);
+                return View("Details", box);
         }
 
         public ActionResult Delete(int id)
@@ -70,9 +73,11 @@ namespace BoxProblem.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(int volLimit)
+        public ActionResult Index(string SearchType, string SearchValue)
         {
-            return View(service.GetVolumeLargerThan(volLimit));
+            SearchField searchField = new SearchField(SearchType, SearchValue);
+            var debug = service.Search(searchField);
+            return View(debug);
         }
     }
 }
