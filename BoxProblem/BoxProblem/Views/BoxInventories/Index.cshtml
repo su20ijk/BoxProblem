@@ -6,8 +6,8 @@
 @Html.ActionLink("Create", "Create", "BoxInventories")
 
 <form action="Search" method="post">
-    <label>Search for boxes larger than: </label><input name="volLimit" type="number" />
-    <input type="submit" value="Search"/>
+    <label>Search for boxes larger than: </label>
+    <a class="buttonB" href="href="@Url.Action("Search", "BoxInventories")>Search</a>
 </form>
 
 <table class="table">

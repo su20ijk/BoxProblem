@@ -1,11 +1,13 @@
 ﻿@using BoxProblem.Data;
 @model List<BoxInventory>
 @{
-    ViewData["Title"] = "Search";
+    ViewBag.Title = "Search";
 }
 
 <h2>Search</h2>
 <table class="table">
+    <input name="volLimit" type="number" />
+    <input type="submit" value="Search" />
     <tr>
         <th><span>Volume</span></th>
         <th><span>Quantity</span></th>
@@ -22,5 +24,5 @@
         </tr>
     }
 </table>
-<button class="buttonB">@Html.ActionLink("Cancel", "Index")</button>
+<button class="buttonB">@Html.ActionLink("Back", "Index")</button>
 

@@ -34,9 +34,21 @@ namespace BoxProblem.Server
         {
             repository.DeleteBox(toDelete);
         }
+
         public List<BoxInventory> GetVolumeLargerThan(int vol)
         {
-            return repository.GetVolumeLargerThan(vol);
+            List<BoxInventory> boxes = repository.GetAllBoxes();
+            List<BoxInventory> x = new List<BoxInventory>();
+            foreach (BoxInventory y in boxes)
+            {
+                if (y.Volume > vol)
+                {
+                    x.Add(y);
+                }
+            }
+
+            return x;
         }
+
     }
 }
