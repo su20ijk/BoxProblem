@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BoxProblem.ViewModel;
 
 namespace BoxProblem.Server
 {
@@ -34,9 +35,9 @@ namespace BoxProblem.Server
         {
             repository.DeleteBox(toDelete);
         }
-        public List<BoxInventory> GetVolumeLargerThan(int vol)
+        public List<BoxInventory> Search(SearchField field)
         {
-            return repository.GetVolumeLargerThan(vol);
+            return repository.Search(field);
         }
     }
 }

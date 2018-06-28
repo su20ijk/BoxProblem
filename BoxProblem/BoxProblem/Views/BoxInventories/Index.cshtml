@@ -12,9 +12,28 @@
     </div>
 <div class="container topspace2">
 </div>
-<form action="BoxInventories/Search" method="post">
+<form action="@Url.Action("Index")" method="post">
     <div class="row">
-        <label class="label">Search for boxes larger than: </label><input class="input3" name="volLimit" type="number" />
+        <label>Search for boxes that</label>
+        <select name="SearchType">
+            <option value="bv">has a larger volume than: </option>
+            <option value="sv">has the same volume than: </option>
+            <option value="lv">has a smaller volume than: </option>
+            <option value="bw">has a larger weight than: </option>
+            <option value="sw">has the same weight than: </option>
+            <option value="lw">has a smaller weight than: </option>
+            <option value="bc">has a higher cost than: </option>
+            <option value="sc">has the same cost than: </option>
+            <option value="lc">has a lower cost than: </option>
+            <option value="tl">can/cannot hold liquid: </option>
+            <option value="bi">has a higher inventory count than: </option>
+            <option value="si">has the same inventory count than:</option>
+            <option value="li">has a lower inventory count than:</option>
+            <option value="bd">was created after:</option>
+            <option value="sd">was created on:</option>
+            <option value="ld">was created before:</option>
+        </select>
+        <input name="SearchValue" />
         <input class="button2" type="submit" value="Search" />
         <div class="buttonB">@Html.ActionLink("Create", "Create", "BoxInventories")</div>
     </div>

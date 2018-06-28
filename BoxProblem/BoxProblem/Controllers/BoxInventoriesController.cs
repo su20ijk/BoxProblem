@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BoxProblem.Data;
 using BoxProblem.Server;
 using Microsoft.AspNetCore.Mvc;
+using BoxProblem.ViewModel;
 
 namespace BoxProblem.Controllers
 {
@@ -17,13 +18,10 @@ namespace BoxProblem.Controllers
             service = new BoxInventoryService(context);
         }
 
-        public ActionResult Index(int? volLimit = null)
+        public ActionResult Index()
         {
-            if (volLimit == null)
-            {
-                return View(service.GetAll());
-            }
-            return View(service.GetVolumeLargerThan(volLimit.Value));
+           
+            return View(service.GetAll());
         }
 
         public ActionResult Details(int id)
@@ -75,9 +73,11 @@ namespace BoxProblem.Controllers
         }
 
         [HttpPost]
-        public ActionResult Search(int volLimit)
+        public ActionResult Index(string SearchType, string SearchValue)
         {
-            return RedirectToAction("Index", new { volLimit = volLimit });
+            SearchField searchField = new SearchField(SearchType, SearchValue);
+            var debug = service.Search(searchField);
+            return View(debug);
         }
     }
 }
