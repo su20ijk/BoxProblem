@@ -14,6 +14,19 @@
 </div>
 <form action="BoxInventories/Search" method="post">
     <div class="row">
+        <select name="SearchData">
+            <option value="Weight">Weight</option>
+            <option value="Volume">Volume</option>
+            <option value="Cost">Cost</option>
+            <option value="Liquid">Holds Liquid</option>
+            <option value="Count">Quantity</option>
+            <option value="Date">Date Recieved</option>
+        </select>
+        <select name="SearchRelative">
+            <option value="LessThan"><</option>
+            <option value="GreaterThan">></option>
+            <option value="Exactly">=</option>
+        </select>
         <label class="label">Search for boxes larger than: </label><input class="input3" name="volLimit" type="number" />
         <input class="button2" type="submit" value="Search" />
         <div class="buttonB">@Html.ActionLink("Create", "Create", "BoxInventories")</div>
