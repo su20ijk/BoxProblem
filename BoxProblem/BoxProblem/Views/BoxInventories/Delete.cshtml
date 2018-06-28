@@ -19,30 +19,40 @@
             <label class="label">Weight: </label> @Model.Weight
         </div>
     </div>
+    <div class="container topspace3">
+    </div>
     <div class="row">
         <div class="offset-2">
             <label class="label">Volume: </label> @Model.Volume
         </div>
+    </div>
+    <div class="container topspace3">
     </div>
     <div class="row">
         <div class="offset-2">
             <label class="label">Liquid: </label> @Model.CanHoldLiquid
         </div>
     </div>
+    <div class="container topspace3">
+    </div>
     <div class="row">
         <div class="offset-2">
             <label class="label">Cost: </label> @Model.Cost
         </div>
+    </div>
+    <div class="container topspace3">
     </div>
     <div class="row">
         <div class="offset-2">
             <label class="label">Amount in Inventory: </label> @Model.InventoryCount
         </div>
     </div>
-    <div class= "container topsapce3">
+    <div class="container topspace3">
     </div>
     <div class="row" align="center">
         <label class="label">ARE YOU SURE YOU WANT TO DELETE?</label>
+        <div class="container topspace3">
+        </div>
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
