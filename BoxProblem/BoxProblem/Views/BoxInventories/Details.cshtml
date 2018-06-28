@@ -27,10 +27,6 @@
     </div>
 </div>
 <div class="row">
-    <div class="offset-6">
-        <button class="buttonB">@Html.ActionLink("Edit", "Edit", new { id = @Model.Id })</button>
-        <button class="buttonB">@Html.ActionLink("Cancel", "Index")</button>
-    </div>
     <div class="row body2">
         <div class="offset-2 body">
             <label class="label">Able to Hold Liquid: </label>@Model.CanHoldLiquid
@@ -51,17 +47,18 @@
         </div>
     </div>
     <div class="container topspace3">
-    </div>
-
     <div class="row">
-        <div class="offset-6">
-            <a class="buttonB" href="@Url.Action("Edit","BoxInventories",new { id = @Model.Id })">Edit</a>
-            <a class="buttonB" href="@Url.Action("Index","BoxInventories")">Back to List</a>
+        <div class="offset-2">
+            <p>Creation Date: @Model.CreatedAt</p>
         </div>
     </div>
-</div>
-    <div class="container topspace3">
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Creation Date: @Model.CreatedAt</p>
+            <div class="row">
+                <div class="offset-6">
+                    <a class="buttonB" href="@Url.Action("Edit","BoxInventories",new { id = @Model.Id })">Edit</a>
+                    <a class="buttonB" href="@Url.Action("Index","BoxInventories")">Back to List</a>
+                </div>
+            </div>
+        </div>
+        <div class="container topspace3">
+        </div>
+    </div>
