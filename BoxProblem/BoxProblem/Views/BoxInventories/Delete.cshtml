@@ -5,49 +5,51 @@
 
 <br />
 <br />
-<div class="row">
-    <div class="col-12 header">
-        Delete Confirmation
-    </div>
-</div>
-<br />
-<br />
-
-<div class="row">
-    <div class="offset-2">
-        <p>Weight: @Model.Weight</p>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Volume: @Model.Volume</p>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Liquid(Yes or No): @Model.CanHoldLiquid</p>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Cost: @Model.Cost</p>
-    </div>
-</div>
-<div class="row">
-    <div class="offset-2">
-        <p>Amount in Inventory: @Model.InventoryCount</p>
-    </div>
-</div>
-<div class="row">
-    <p>Are you sure you want to delete?</p>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="bkg">
+    <div class="row">
+        <div class="col-12 headerbkg">
+            Delete Confirmation
         </div>
-    }
+    </div>
+    <br />
+    <br />
+
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Weight: </label> @Model.Weight
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Volume: </label> @Model.Volume
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Liquid: </label> @Model.CanHoldLiquid
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Cost: </label> @Model.Cost
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Amount in Inventory: </label> @Model.InventoryCount
+        </div>
+    </div>
+    <div class= "container topsapce3">
+    </div>
+    <div class="row" align="center">
+        <label class="label">ARE YOU SURE YOU WANT TO DELETE?</label>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div> <input type="submit" value="Delete" class="buttonB" /> </div>
+            <a class="buttonB" href="@Url.Action("Index","BoxInventories")">Cancel</a>
+        }
+    </div>
 </div>
 
