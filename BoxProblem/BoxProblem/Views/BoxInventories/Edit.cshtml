@@ -16,12 +16,12 @@
     <input name="IdTP" value="@Model.Id" hidden="hidden" />
     <div class="row">
         <div class="offset-2">
-            <label>Weight: </label><input name="Weight" type="number" value=@Model.Weight min="0"/>
+            <label class="label">Weight: </label><input name="Weight" type="number" value=@Model.Weight min="1" class="input"/>
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Volume: </label><input name="Volume" type="number" value=@Model.Volume min="0"/>
+            <label class="label">Volume: </label><input name="Volume" type="number" value=@Model.Volume min="1" class="input"/>
         </div>
     </div>
     <div class="row">
@@ -31,12 +31,12 @@
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Cost: </label><input name="Cost" type="number" step="any" value="@Model.Cost" min="0"/>
+            <label class="label">Cost: </label><input name="Cost" type="number" step="any" value="@Model.Cost" min="" class="input"/>
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Amount in Inventory: </label><input name="InventoryCount" type="number" value="@Model.InventoryCount" min="0"/>
+            <label class="label">Amount in Inventory: </label><input name="InventoryCount" type="number" value="@Model.InventoryCount" min="0" class="input"/>
         </div>
     </div>
     <div class="row">
