@@ -17,9 +17,13 @@ namespace BoxProblem.Controllers
             service = new BoxInventoryService(context);
         }
 
-        public IActionResult Index()
+        public ActionResult Index(int? volLimit = null)
         {
-            return View(service.GetAll());
+            if (volLimit == null)
+            {
+                return View(service.GetAll());
+            }
+            return View(service.GetVolumeLargerThan(volLimit.Value));
         }
 
         public ActionResult Details(int id)
@@ -37,7 +41,7 @@ namespace BoxProblem.Controllers
         public ActionResult Create(BoxInventory box)
         {
                 service.AddBox(box);
-                return RedirectToAction("Index", service.GetAll());
+                return View("Index", service.GetAll());
         }
 
         public ActionResult Edit(int id)
@@ -51,7 +55,7 @@ namespace BoxProblem.Controllers
         {
                 box.Id = IdTP;
                 service.EditBox(box);
-                return RedirectToAction("Details", box);
+                return View("Details", box);
         }
 
         public ActionResult Delete(int id)
@@ -72,7 +76,7 @@ namespace BoxProblem.Controllers
         [HttpPost]
         public ActionResult Search(int volLimit)
         {
-            return View(service.GetVolumeLargerThan(volLimit));
+            return RedirectToAction("Index", new { volLimit = volLimit });
         }
     }
 }
