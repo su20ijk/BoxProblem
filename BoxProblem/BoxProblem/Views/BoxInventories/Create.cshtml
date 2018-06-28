@@ -1,0 +1,48 @@
+﻿@model  BoxProblem.Data.BoxInventory
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container topspace">
+</div>
+<form action="Create" method="post" class="bkg">
+    <div class="row">
+        <div class="col-12 headerbkg">
+            Create
+        </div>
+    </div>
+    <div class="container topspace3">
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Weight: </label><input class="input" name="Weight" type="number" min="1" required />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Volume: </label><input class="input" name="Volume" type="number" min="1" required />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Able to hold Liquid: </label><input class="input2" name="CanHoldLiquid" type="checkbox" value="true" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Cost: </label><input class="input" name="Cost" type="number" step="any" min="0" required />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Amount in Inventory: </label><input class="input" name="InventoryCount" min="0" type="number" required />
+        </div>
+    </div>
+    <div class="container topspace3">
+    </div>
+    <div class="row">
+        <div class="offset-6">
+            <input class="buttonB" type="submit" value="Create" />
+        </div>
+        <a class="buttonB" href="@Url.Action("Index","BoxInventories")">Cancel</a>
+    </div>
+</form>

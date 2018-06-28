@@ -1,0 +1,67 @@
+﻿@using BoxProblem.Data;
+@model BoxInventory
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container topspace">
+</div>
+<div class="bkg">
+    <div class="row">
+        <div class="col-12 headerbkg">
+            Details
+        </div>
+    </div>
+    <div class="container topspace3">
+    </div>
+    <div class="row body2">
+        <div class="offset-2">
+            <label class="label">Weight: </label>@Model.Weight
+        </div>
+    </div>
+    <div class="container topspace3">
+    </div>
+    <div class="row body2">
+        <div class="offset-2">
+            <label class="label">Volume: </label>@Model.Volume
+        </div>
+    </div>
+    <div class="container topspace3">
+    </div>
+    <div class="row body2">
+        <div class="offset-2 body">
+            <label class="label">Able to Hold Liquid: </label>@Model.CanHoldLiquid
+        </div>
+    </div>
+    <div class="container topspace3">
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Cost: </label>@Model.Cost
+        </div>
+    </div>
+    <div class="container topspace3">
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <label class="label">Amount in Inventory: </label>@Model.InventoryCount
+        </div>
+    </div>
+    <div class="container topspace3">
+    </div>
+    <div class="row body2">
+        <div class="offset-2">
+            <label class="label">Creation Date: </label>@Model.CreatedAt
+        </div>
+    </div>
+    <div class="container topspace3">
+</div>
+        <div class="row">
+            <div class="offset-6">
+                <a class="buttonB" href="@Url.Action("Edit","BoxInventories",new { id = @Model.Id })">Edit</a>
+                <a class="buttonB" href="@Url.Action("Index","BoxInventories")">Back to List</a>
+            </div>
+        </div>
+    </div>
+    <div class="container topspace3">
+    </div>
+</div>

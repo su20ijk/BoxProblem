@@ -1,0 +1,59 @@
+﻿@using BoxProblem.Data;
+@model List<BoxInventory>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container topspace">
+</div>
+<div class="row" align="center">
+    <div class="col-12 header">
+        Inventory
+</div>
+    </div>
+<div class="container topspace2">
+</div>
+<form action="@Url.Action("Index")" method="post">
+    <div class="row">
+        <label class="label">Search for boxes that</label>
+
+        <select name="SearchType">
+            <option value="bv">has a larger volume than: </option>
+            <option value="sv">has the same volume than: </option>
+            <option value="lv">has a smaller volume than: </option>
+            <option value="bw">has a larger weight than: </option>
+            <option value="sw">has the same weight than: </option>
+            <option value="lw">has a smaller weight than: </option>
+            <option value="bc">has a higher cost than: </option>
+            <option value="sc">has the same cost than: </option>
+            <option value="lc">has a lower cost than: </option>
+            <option value="tl">can/cannot hold liquid: </option>
+            <option value="bi">has a higher inventory count than: </option>
+            <option value="si">has the same inventory count than:</option>
+            <option value="li">has a lower inventory count than:</option>
+            <option value="bd">was created after:</option>
+            <option value="sd">was created on:</option>
+            <option value="ld">was created before:</option>
+        </select>
+        <input name="SearchValue" />
+        <input class="button2" type="submit" value="Search" />
+        <a class="buttonB" href="@Url.Action("Create","BoxInventories")">Create</a>
+    </div>
+</form>
+
+<table class="table">
+    <tr>
+        <th><span class="label">Volume</span></th>
+        <th><span class="label">Quantity</span></th>
+        <th><br /></th>
+    </tr>
+    @foreach (BoxInventory box in Model)
+    {
+        <tr class="table" onclick="location.href='@Url.Action("Details","BoxInventories",new { id = box.Id })'">
+            <td class="bodyText">@box.Volume</td>
+            <td class="bodyText">@box.InventoryCount</td>
+            <td>
+                <a class="buttonB" href="@Url.Action("Delete","BoxInventories",new { id = box.Id })">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
