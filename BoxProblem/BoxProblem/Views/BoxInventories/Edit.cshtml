@@ -11,38 +11,40 @@
             Edit
         </div>
     </div>
-</div>
-<form action="Edit" method="post">
+    <div class="container topspace3">
+    </div>
     <input name="IdTP" value="@Model.Id" hidden="hidden" />
     <div class="row">
         <div class="offset-2">
-            <label>Weight: </label><input name="Weight" type="number" value=@Model.Weight min="1" required/>
+            <label class="label">Weight: </label><input class="input" name="Weight" type="number" value=@Model.Weight min="1" required />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Volume: </label><input name="Volume" type="number" value=@Model.Volume min="1" required/>
+            <label class="label">Volume: </label><input class="input" name="Volume" type="number" value=@Model.Volume min="1" required />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Ability to hold liquid: </label><input name="CanHoldLiquid" type="checkbox" value="true" checked=@Model.CanHoldLiquid />
+            <label class="label">Ability to hold liquid: </label><input class="input" name="CanHoldLiquid" type="checkbox" value="true" checked=@Model.CanHoldLiquid />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Cost: </label><input name="Cost" type="number" step="any" value="@Model.Cost" min="0" required/>
+            <label class="label">Cost: </label><input class="input" name="Cost" type="number" step="any" value="@Model.Cost" min="0" required />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Amount in Inventory: </label><input name="InventoryCount" min="0" type="number" required value="@Model.InventoryCount" />
+            <label class="label">Amount in Inventory: </label><input class="input" name="InventoryCount" min="0" type="number" required value="@Model.InventoryCount" />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <p>Creation Date: @Model.CreatedAt</p>
+            <label class="label">Creation Date: </label>@Model.CreatedAt
         </div>
+    </div>
+    <div class="container topspace3">
     </div>
     <div class="row">
         <div class="offset-6">
