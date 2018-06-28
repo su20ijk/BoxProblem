@@ -28,6 +28,10 @@
                 <option value="LessThan"><</option>
                 <option value="GreaterThan">></option>
                 <option value="Exactly">=</option>
+            </select>
+        </div>
+        <div id="div2" style="display:none">
+            <select name="SearchRelative">
                 <option value="True">True</option>
                 <option value="False">False</option>
             </select>
@@ -59,26 +63,21 @@
 <script type="text/javascript">
     function showfield(name) {
         var x = document.getElementById("div1");
+        var y = document.getElementById("div2");
         var SearchRelative = document.getElementsByName("SearchRelative");
         if (name != '') {
-            x.style.display = "block";
             if (name != 'Liquid') {
-                
-                SearchRelative[3].style.display = "none";
-                SearchRelative[4].style.display = "none";
-                na.style.display = "block";
+                x.style.display = "block";
+                y.style.display = "none";
             }
             else {
-                SearchRelative[0].style.display = "none";
-                SearchRelative[1].style.display = "none";
-                SearchRelative[2].style.display = "none";
-                na.style.display = "block";
-            }
-            
-            
-        }
+                y.style.display = "block";
+                x.style.display = "none";
+
+            }        }
         else {
             x.style.display = "none";
+            y.style.display = "none";
         }
     }
     
