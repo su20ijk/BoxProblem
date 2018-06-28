@@ -40,6 +40,7 @@ namespace BoxProblem.Controllers
         [HttpPost]
         public ActionResult Create(BoxInventory box)
         {
+            box.CreatedAt = DateTime.Now;
                 service.AddBox(box);
                 return View("Index", service.GetAll());
         }

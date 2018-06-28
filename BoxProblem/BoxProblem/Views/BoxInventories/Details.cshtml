@@ -34,6 +34,11 @@
     </div>
 </div>
 <div class="row">
+    <div class="offset-2">
+        <p>Creation Date: @Model.CreatedAt</p>
+    </div>
+</div>
+<div class="row">
     <div class="offset-6">
         <button class="buttonB">@Html.ActionLink("Edit", "Edit", new { id = @Model.Id })</button>
         <button class="buttonB">@Html.ActionLink("Cancel", "Index")</button>
