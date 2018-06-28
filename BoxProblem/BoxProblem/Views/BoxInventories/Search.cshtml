@@ -1,0 +1,26 @@
+﻿@using BoxProblem.Data;
+@model List<BoxInventory>
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h2>Search</h2>
+<table class="table">
+    <tr>
+        <th><span>Volume</span></th>
+        <th><span>Quantity</span></th>
+        <th><br /></th>
+    </tr>
+    @foreach (BoxInventory box in Model)
+    {
+        <tr class="table" onclick="location.href='@Url.Action("Details","BoxInventories",new { id = box.Id })'">
+            <td class="bodyText">@box.Volume</td>
+            <td class="bodyText">@box.InventoryCount</td>
+            <td>
+                <a class="buttonB" href="@Url.Action("Delete","BoxInventories",new { id = box.Id })">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<button class="buttonB">@Html.ActionLink("Cancel", "Index")</button>
+
