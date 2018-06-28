@@ -3,17 +3,27 @@
 @{
     ViewData["Title"] = "Index";
 }
-@Html.ActionLink("Create", "Create", "BoxInventories")
-
+<div class="container topspace">
+</div>
+<div class="row" align="center">
+    <div class="col-12 header">
+        Inventory
+</div>
+    </div>
+<div class="container topspace2">
+</div>
 <form action="BoxInventories/Search" method="post">
-    <label>Search for boxes larger than: </label><input name="volLimit" type="number" />
-    <input type="submit" value="Search"/>
+    <div class="row">
+        <label class="label">Search for boxes larger than: </label><input class="input3" name="volLimit" type="number" />
+        <input class="button2" type="submit" value="Search" />
+        <div class="buttonB">@Html.ActionLink("Create", "Create", "BoxInventories")</div>
+    </div>
 </form>
 
 <table class="table">
     <tr>
-        <th><span>Volume</span></th>
-        <th><span>Quantity</span></th>
+        <th><span class="label">Volume</span></th>
+        <th><span class="label">Quantity</span></th>
         <th><br /></th>
     </tr>
     @foreach (BoxInventory box in Model)

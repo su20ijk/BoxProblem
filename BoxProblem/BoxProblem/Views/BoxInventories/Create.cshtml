@@ -2,40 +2,43 @@
 @{
     ViewData["Title"] = "Create";
 }
-<br />
-<br />
-<div class="row">
-    <div class="col-12 header">
-        Create
-    </div>
+<div class="container topspace">
 </div>
-<br />
-<br />
-<form action="Create" method="post">
+<form action="Create" method="post" class="bkg">
+    <div class="row">
+        <div class="col-12 headerbkg">
+            Create
+        </div>
+    </div>
+    <div class="container topspace2">
+    </div>
     <div class="row">
         <div class="offset-2">
-            <label>Weight: </label><input class="input" name="Weight" type="number"/>
+            <label class="label">Weight: </label><input class="input" name="Weight" type="number" />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Volume: </label><input class="input" name="Volume" type="number"/>
+            <label class="label">Volume: </label><input class="input" name="Volume" type="number" />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Liquid(Yes or No): </label><input class="input" name="CanHoldLiquid" type="checkbox" value="true" />
+            <label class="label">Liquid(Yes or No): </label><input class="input2" name="CanHoldLiquid" type="checkbox" value="true" />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Cost: </label><input class="input" name="Cost" type="number" step="any" />
+            <label class="label">Cost: </label><input class="input" name="Cost" type="number" step="any" />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Amount in Inventory: </label><input class="input" name="InventoryCount" type="number"/>
+            <label class="label">Amount in Inventory: </label><input class="input" name="InventoryCount" type="number" />
         </div>
+    </div>
+    <div class="row">
+
     </div>
     <div class="row">
         <div class="offset-6">
