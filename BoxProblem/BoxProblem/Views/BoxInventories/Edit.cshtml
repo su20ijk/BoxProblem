@@ -3,42 +3,47 @@
 @{
     ViewData["Title"] = "Edit";
 }
-<div class="row">
-    <div class="col-12 header">
-        Edit
-    </div>
+<div class="container topspace">
 </div>
-<form action="Edit" method="post">
+<form action="Edit" method="post" class="bkg">
+    <div class="row">
+        <div class="col-12 headerbkg">
+            Edit
+        </div>
+    </div>
+    <div class="container topspace2">
+    </div>
     <input name="IdTP" value="@Model.Id" hidden="hidden" />
     <div class="row">
         <div class="offset-2">
-            <label>Weight: </label><input name="Weight" type="number" value=@Model.Weight />
+            <label class="label">Weight: </label><input class="input" name="Weight" type="number" value=@Model.Weight />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Volume: </label><input name="Volume" type="number" value=@Model.Volume />
+            <label class="label">Volume: </label><input class="input" name="Volume" type="number" value=@Model.Volume />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Liquid: </label><input name="CanHoldLiquid" type="checkbox" value="true" checked=@Model.CanHoldLiquid/>
+            <label class="label">Liquid: </label><input class="input" name="CanHoldLiquid" type="checkbox" value="true" checked=@Model.CanHoldLiquid />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Cost: </label><input name="Cost" type="number" step="any" value="@Model.Cost" />
+            <label class="label">Cost: </label><input class="input2" name="Cost" type="number" step="any" value="@Model.Cost" />
         </div>
     </div>
     <div class="row">
         <div class="offset-2">
-            <label>Amount in Inventory: </label><input name="InventoryCount" type="number" value="@Model.InventoryCount" />
+            <label class="label">Amount in Inventory: </label><input class="input" name="InventoryCount" type="number" value="@Model.InventoryCount" />
         </div>
     </div>
     <div class="row">
         <div class="offset-6">
-            <input type="submit" name="submit">
+            <input class="buttonB" type="submit" name="submit">
         </div>
     </div>
 </form>
+
 @Html.ActionLink("Back", "Details", new { id = @Model.Id })
